@@ -404,7 +404,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgersToSpawn: 0
-  burgerPrefab: {fileID: 0}
+  spawnInterval: 0.14
+  burgerPrefab: {fileID: 5889211365368794504, guid: 5c54847c347f2472e8b092bfae47d743,
+    type: 3}
 --- !u!4 &2037178871
 Transform:
   m_ObjectHideFlags: 0
@@ -413,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037178869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3327, y: 3.8498, z: -2.2834945}
+  m_LocalPosition: {x: 0.7, y: 2.21, z: -1.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
