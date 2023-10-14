@@ -521,7 +521,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: coffeecup
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5929503411908876661, guid: b2457f214427e094eaa64198d3bda468, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2457f214427e094eaa64198d3bda468, type: 3}
 --- !u!4 &6546254252104049248 stripped
 Transform:
