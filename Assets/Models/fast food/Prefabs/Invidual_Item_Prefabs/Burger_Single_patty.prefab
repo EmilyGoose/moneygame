@@ -177,8 +177,8 @@ GameObject:
   - component: {fileID: 6553157627137775410}
   - component: {fileID: 7880918577786607767}
   - component: {fileID: 5384707533450488925}
-  - component: {fileID: 4293865935874740862}
   - component: {fileID: -6918611706529149858}
+  - component: {fileID: -4234999844296402081}
   m_Layer: 0
   m_Name: Burger_Single_patty
   m_TagString: Untagged
@@ -254,19 +254,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4293865935874740862
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5889211365368794504}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.113487646, y: 0.02638885, z: 0.112672046}
-  m_Center: {x: -0.00017150305, y: 0.013194427, z: 0.0009913128}
 --- !u!54 &-6918611706529149858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -283,6 +270,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-4234999844296402081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889211365368794504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.113487646, y: 0.02638885, z: 0.112672046}
+  m_Center: {x: -0.00017150305, y: 0.013194427, z: 0.0009913128}
 --- !u!1 &6561804708433709867
 GameObject:
   m_ObjectHideFlags: 0
