@@ -58,7 +58,7 @@ public class BurgerFactoryScript : MonoBehaviour
         // Get Vector3 representing the angle
         Vector3 velocityVector = velocityQuackOnion * Vector3.forward;
         // Multiply to make the effect stronger since we start with a unit vector
-        int forceMultiplier =  (int)Random.Range(0, 50F);
+        int forceMultiplier =  (int)Random.Range(0, 25F);
         velocityVector.Scale(new Vector3(forceMultiplier, forceMultiplier, forceMultiplier));
         
         return velocityVector;
