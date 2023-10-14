@@ -2182,7 +2182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgersToSpawn: 0
-  spawnInterval: 0.1
+  spawnInterval: 0.01
   burgerPrefab: {fileID: 8483787878694327367, guid: 8de6efa3154b4894b90f0cfa154b962b,
     type: 3}
 --- !u!4 &1936101556

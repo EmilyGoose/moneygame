@@ -43,6 +43,7 @@ public class BurgerFactoryScript : MonoBehaviour
         {
             // Create new burger
             GameObject newBurger = Instantiate(burgerPrefab, gameObject.transform.position, Quaternion.identity);
+            newBurger.transform.parent = gameObject.transform;
             // Make it spawn with a bit of outwards force so it doesn't just drop
             newBurger.GetComponent<Rigidbody>().AddForce(randomVelocityVector());
             // Keep track of it in the list
