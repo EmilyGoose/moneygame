@@ -1802,7 +1802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &914792202
 Light:
   m_ObjectHideFlags: 0
@@ -2314,7 +2314,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whisperManager: {fileID: 766332300}
   micRecord: {fileID: 1542724490}
-  isAllowedToRecord: 1
   streamSegments: 1
   doneProcessing: 0
   recIndicator: {fileID: 914792201}
