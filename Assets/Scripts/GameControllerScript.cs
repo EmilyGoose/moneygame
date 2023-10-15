@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
-// using Whisper;
-// using Whisper.Utils;
 
 public class GameControllerScript : MonoBehaviour
 {
     public GameObject textArea;
     public GameObject tacoButton;
+    
+    // Dictation
+    public DictationController dictationController;
     
     // Jars for comparison
     public GameObject guessJar;
@@ -48,18 +51,53 @@ public class GameControllerScript : MonoBehaviour
         }
         
         textBox.SetText("First question! How much did you spend on McDonald's this month?");
-
-        yield return new WaitForSeconds(5);
         
-        yield return new WaitForSeconds(2);
+        dictationController.toggleRecord();
+        
+        yield return new WaitForSeconds(6);
+        
+        dictationController.toggleRecord();
+        
+        textBox.SetText("Processing...");
+
+        while (!dictationController.doneProcessing)
+        {
+            yield return new WaitForSeconds(0.5F);
+        }
+
+        int guessedMoney = parseAnswer(dictationController.resultText);
+        dictationController.resultText = "";
+        
+        
+        
+        yield return new WaitForSeconds(5);
 
         textBox.SetText("Wrong bitch. 10 milion.");
 
         // Spawn coins
-        guessCoinScript.burgersToSpawn = 10;
+        guessCoinScript.burgersToSpawn = guessedMoney;
         actualCoinScript.burgersToSpawn = 500;
         
         // Spawn burger
         burgerSpawner.burgersToSpawn = 500;
     }
+    
+    // i love regex
+    private int parseAnswer(String matchText)
+    {
+        var pattern = @"[0-9]+";
+        Regex compiledRegex = new Regex(pattern, RegexOptions.IgnoreCase);
+        Match m = compiledRegex.Match(matchText);
+
+        if (m.Success)
+        {
+            return int.Parse(m.Value);
+        }
+        else
+        {
+            // fuck it we ball
+            return 50;
+        }
+    }
 }
+
