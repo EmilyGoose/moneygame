@@ -62,13 +62,13 @@ public class GameControllerScript : MonoBehaviour
                 {
                     "Welcome to Show Me The Money! Hit the taco to start.",
                     "First question! How much did you spend on Food this month?",
-                    "Grocery" // todo actual
+                    "Food"
                 },
                 new[]
                 {
                     "When you're ready for the next question, hit the taco!",
                     "Next question! How much did you spend at Tim's?",
-                    "Fuel" // todo actual
+                    "Tims"
                 }
             })
         {
@@ -130,7 +130,7 @@ public class GameControllerScript : MonoBehaviour
             actualBox.SetText($"Actual amount: ${backend.actualValue}");
 
             // Spawn burgers (or coffee) (around $5 per burger and $2 per coffee)
-            if (currentStringSet[2].Equals("Grocery"))
+            if (currentStringSet[2].Equals("Food"))
             {
                 burgerSpawner.burgersToSpawn = backend.actualValue / 5;
             }
