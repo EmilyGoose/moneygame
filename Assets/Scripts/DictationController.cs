@@ -10,19 +10,10 @@ public class DictationController : MonoBehaviour
 {
    public WhisperManager whisperManager;
    public MicrophoneRecord micRecord;
-   public bool isAllowedToRecord;
    public bool streamSegments = true;
    public bool doneProcessing = false;
 
    public String resultText = "";
-   
-   // [Header("UI")] 
-   // public Button button;
-   // public Text buttonText;
-   // public Text outputText;
-   // public Text timeText;
-   // public ScrollRect scroll;
-   // TODO: some type of modifiable fields, make sure this is only awake when we need to
         
    private string _buffer;
 
@@ -36,9 +27,6 @@ public class DictationController : MonoBehaviour
 
    public void toggleRecord()
    {
-      // if not prompted to record, just don't 
-      if (!isAllowedToRecord) return;
-      
       // else actually record
       if (!micRecord.IsRecording)
       {
@@ -65,7 +53,7 @@ public class DictationController : MonoBehaviour
    private void OnProgressHandler(int progress)
    {
       // print message to console i promise we're doing something
-      print($"processing message: {progress}%, gimme a bit");
+      print($"processing message: {progress}%");
    }
    
    private void OnNewSegment(WhisperSegment segment)
