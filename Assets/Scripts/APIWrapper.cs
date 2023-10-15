@@ -19,7 +19,7 @@ public class APIWrapper : MonoBehaviour
     [System.Serializable]
     public class Response {
         public string reply;
-        [FormerlySerializedAs("spent_amount")] public string spentAmount;
+        public string spent_amount;
     }
     
     public void RequestAnswer(int guess, string category)
@@ -48,10 +48,11 @@ public class APIWrapper : MonoBehaviour
             case UnityWebRequest.Result.Success:
                 var res = webRequest.downloadHandler.text;
                 Response jsonRes = JsonUtility.FromJson<Response>(res);
+                print(res);
                 print(jsonRes.reply);
                 // TODO: something with the result
                 geePeeTee = jsonRes.reply;
-                actualValue = Int32.Parse(jsonRes.spentAmount);
+                actualValue = Int32.Parse(jsonRes.spent_amount);
                 requestComplete = true;
                 break;
             case UnityWebRequest.Result.InProgress:
