@@ -12,6 +12,9 @@ public class GameControllerScript : MonoBehaviour
     // Dictation
     public DictationController dictationController;
     
+    // API wrapper
+    private APIWrapper backend;
+    
     // Jars for comparison
     public GameObject guessJar;
     public GameObject actualJar;
@@ -35,6 +38,8 @@ public class GameControllerScript : MonoBehaviour
         guessCoinScript = guessJar.GetComponent<BurgerFactoryScript>();
         actualCoinScript = actualJar.GetComponent<BurgerFactoryScript>();
         burgerSpawner = burgerFactory.GetComponent<BurgerFactoryScript>();
+
+        backend = GetComponent<APIWrapper>();
         
         StartCoroutine(gameCoroutine());
     }
@@ -50,7 +55,7 @@ public class GameControllerScript : MonoBehaviour
             yield return new WaitForSeconds(0.5F);
         }
         
-        textBox.SetText("First question! How much did you spend on McDonald's this month?");
+        textBox.SetText("First question! How much did you spend on food this month?");
         
         dictationController.toggleRecord();
         
@@ -58,7 +63,7 @@ public class GameControllerScript : MonoBehaviour
         
         dictationController.toggleRecord();
         
-        textBox.SetText("Processing...");
+        textBox.SetText("Processing audio...");
 
         while (!dictationController.doneProcessing)
         {
@@ -68,18 +73,25 @@ public class GameControllerScript : MonoBehaviour
         int guessedMoney = parseAnswer(dictationController.resultText);
         dictationController.resultText = "";
         
+        textBox.SetText("Contacting server...");
         
+        backend.RequestAnswer(guessedMoney, "Food");
         
-        yield return new WaitForSeconds(5);
-
-        textBox.SetText("Wrong bitch. 10 milion.");
+        while (!backend.requestComplete)
+        {
+            yield return new WaitForSeconds(0.5F);
+        }
+        backend.requestComplete = false;
+        
+        // Output result
+        textBox.SetText(backend.geePeeTee);
 
         // Spawn coins
         guessCoinScript.burgersToSpawn = guessedMoney;
-        actualCoinScript.burgersToSpawn = 500;
+        actualCoinScript.burgersToSpawn = backend.actualValue;
         
-        // Spawn burger
-        burgerSpawner.burgersToSpawn = 500;
+        // Spawn burgers (around $5 per burger fuck it)
+        burgerSpawner.burgersToSpawn = backend.actualValue / 5;
     }
     
     // i love regex

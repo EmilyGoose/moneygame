@@ -9,9 +9,12 @@ using UnityEngine.Serialization;
 public class APIWrapper : MonoBehaviour
 {
     
-    private const string URL = "https://on-request-example-hc4jyd4vva-uc.a.run.app/transactions/evaluate%22";
+    private const string URL = "https://on-request-example-hc4jyd4vva-uc.a.run.app/transactions/evaluate";
     private string jsonBody = "";
-    // TODO: gimme the goddamn text field i need to modify
+
+    public bool requestComplete = false;
+    public string geePeeTee = "";
+    public int actualValue = 0;
     
     [System.Serializable]
     public class Response {
@@ -23,6 +26,8 @@ public class APIWrapper : MonoBehaviour
     {
         jsonBody = "{\"user_id\":\"user_1\",\"expected_amount\":" + guess +
                           ",\"filter\":{\"tx_type\":\""+ category +"\"}}";
+        
+        print(jsonBody);
 
         StartCoroutine(nameof(MakeAPIRequest));
     }
@@ -45,6 +50,9 @@ public class APIWrapper : MonoBehaviour
                 Response jsonRes = JsonUtility.FromJson<Response>(res);
                 print(jsonRes.reply);
                 // TODO: something with the result
+                geePeeTee = jsonRes.reply;
+                actualValue = Int32.Parse(jsonRes.spentAmount);
+                requestComplete = true;
                 break;
             case UnityWebRequest.Result.InProgress:
                 break;
