@@ -14,6 +14,8 @@ public class DictationController : MonoBehaviour
    public bool streamSegments = true;
    public bool doneProcessing = false;
 
+   public GameObject recIndicator;
+
    public String resultText = "";
    
    // [Header("UI")] 
@@ -44,10 +46,12 @@ public class DictationController : MonoBehaviour
       {
          doneProcessing = false;
          micRecord.StartRecord();
+         recIndicator.SetActive(true);
       }
       else
       {
          micRecord.StopRecord();
+         recIndicator.SetActive(false);
       }
    }
 

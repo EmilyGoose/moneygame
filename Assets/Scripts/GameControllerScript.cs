@@ -90,7 +90,8 @@ public class GameControllerScript : MonoBehaviour
             actualBox.SetText("");
 
             textBox.SetText(currentStringSet[1]);
-
+            yield return new WaitForSeconds(2);
+            
             // Record dictation for 6s
             dictationController.toggleRecord();
             yield return new WaitForSeconds(6);
