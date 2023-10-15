@@ -24,8 +24,14 @@ public class APIWrapper : MonoBehaviour
     
     public void RequestAnswer(int guess, string category)
     {
+        // harcode a little bit here to avoid it elsewhere :D
+        var tx_type = "tx_type";
+        // if (category.Equals("Tims"))
+        // {
+        //    tx_type = "company";
+        //}
         jsonBody = "{\"user_id\":\"user_1\",\"expected_amount\":" + guess +
-                          ",\"filter\":{\"tx_type\":\""+ category +"\"}}";
+                          ",\"filter\":{\"" + tx_type + "\":\""+ category +"\"}}";
         
         print(jsonBody);
 

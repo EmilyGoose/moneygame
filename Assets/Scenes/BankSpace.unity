@@ -2004,6 +2004,7 @@ MonoBehaviour:
   micRecord: {fileID: 1542724490}
   isAllowedToRecord: 1
   streamSegments: 1
+  doneProcessing: 0
   resultText: 
 --- !u!4 &1367888104
 Transform:
@@ -2019,6 +2020,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1373923019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373923021}
+  - component: {fileID: 1373923020}
+  m_Layer: 0
+  m_Name: CoffeeTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1373923020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373923019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9590b5b4892ed4cbfa514c292e36b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burgersToSpawn: 0
+  spawnInterval: 0.1
+  burgerPrefab: {fileID: 9073859228733463897, guid: b2457f214427e094eaa64198d3bda468,
+    type: 3}
+--- !u!4 &1373923021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373923019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.299, y: 1.173, z: -10.416}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1398471653
 PrefabInstance:
@@ -2826,6 +2875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864343664}
   - component: {fileID: 1864343665}
+  - component: {fileID: 1864343666}
   m_Layer: 0
   m_Name: GameScriptController
   m_TagString: Untagged
@@ -2866,6 +2916,22 @@ MonoBehaviour:
   guessJar: {fileID: 1936101554}
   actualJar: {fileID: 236225503}
   burgerFactory: {fileID: 90272056}
+  coffeeSpawner: {fileID: 1373923020}
+--- !u!114 &1864343666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864343663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd2cecad48c474b45aadb77cc419e3b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestComplete: 0
+  geePeeTee: 
+  actualValue: 0
 --- !u!1 &1936101554
 GameObject:
   m_ObjectHideFlags: 0
