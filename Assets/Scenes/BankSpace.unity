@@ -1006,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.621
+      value: -11.269
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1757,7 +1757,7 @@ PrefabInstance:
     - target: {fileID: 765631718273777307, guid: d4945e7f366d02545a7fd4ea716554b8,
         type: 3}
       propertyPath: m_Name
-      value: jar1 (1)
+      value: jar2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4945e7f366d02545a7fd4ea716554b8, type: 3}
@@ -2688,8 +2688,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textArea: {fileID: 339804321}
   tacoButton: {fileID: 4678655236413519924}
-  guessJar: {fileID: 0}
-  actualJar: {fileID: 0}
+  guessJar: {fileID: 1936101554}
+  actualJar: {fileID: 236225503}
+  burgerFactory: {fileID: 90272056}
 --- !u!1 &1936101554
 GameObject:
   m_ObjectHideFlags: 0
