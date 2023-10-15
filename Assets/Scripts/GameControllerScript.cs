@@ -19,6 +19,10 @@ public class GameControllerScript : MonoBehaviour
     public GameObject guessJar;
     public GameObject actualJar;
 
+    // Labels
+    public TextMeshProUGUI guessBox;
+    public TextMeshProUGUI actualBox;
+    
     // Borger
     public GameObject burgerFactory;
 
@@ -77,11 +81,13 @@ public class GameControllerScript : MonoBehaviour
                 yield return new WaitForSeconds(0.5F);
             }
 
-            // Clear anything left in spawners
+            // Clear anything left in spawners or text
             guessCoinScript.burgersToSpawn = 0;
             actualCoinScript.burgersToSpawn = 0;
             burgerSpawner.burgersToSpawn = 0;
             coffeeSpawner.burgersToSpawn = 0;
+            guessBox.SetText("");
+            actualBox.SetText("");
 
             textBox.SetText(currentStringSet[1]);
 
@@ -100,6 +106,7 @@ public class GameControllerScript : MonoBehaviour
 
             // Grab the first int in the user's answer and hit the API
             int guessedMoney = parseAnswer(dictationController.resultText);
+            guessBox.SetText($"You guessed: ${guessedMoney}");
             dictationController.resultText = "";
 
             textBox.SetText("Contacting server...");
@@ -119,6 +126,7 @@ public class GameControllerScript : MonoBehaviour
             // Spawn coins
             guessCoinScript.burgersToSpawn = guessedMoney;
             actualCoinScript.burgersToSpawn = backend.actualValue;
+            guessBox.SetText($"Actual amount: ${backend.actualValue}");
 
             // Spawn burgers (or coffee) (around $5 per burger and $2 per coffee)
             if (currentStringSet[2].Equals("Grocery"))
