@@ -90,7 +90,7 @@ public class GameControllerScript : MonoBehaviour
             actualBox.SetText("");
 
             textBox.SetText(currentStringSet[1]);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             
             // Record dictation for 6s
             dictationController.toggleRecord();
@@ -149,7 +149,7 @@ public class GameControllerScript : MonoBehaviour
     {
         var pattern = @"[0-9]+";
         Regex compiledRegex = new Regex(pattern, RegexOptions.IgnoreCase);
-        Match m = compiledRegex.Match(matchText);
+        Match m = compiledRegex.Match(matchText.Replace(",", ""));
 
         if (m.Success)
         {
