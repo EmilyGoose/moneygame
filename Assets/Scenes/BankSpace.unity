@@ -539,8 +539,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 5.0214705, z: 10}
+  m_Center: {x: 0, y: -2.4892647, z: 0}
 --- !u!1 &236225503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1231,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ResultBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e33665f5f4156d499edd92a7c312641, type: 3}
@@ -3222,6 +3237,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuessBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047809531499628692, guid: 2e33665f5f4156d499edd92a7c312641,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e33665f5f4156d499edd92a7c312641, type: 3}
 --- !u!114 &1889410509 stripped
@@ -3382,7 +3417,7 @@ PrefabInstance:
     - target: {fileID: 138416768791782433, guid: d4945e7f366d02545a7fd4ea716554b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 138416768791782433, guid: d4945e7f366d02545a7fd4ea716554b8,
         type: 3}

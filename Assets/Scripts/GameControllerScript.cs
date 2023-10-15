@@ -108,6 +108,8 @@ public class GameControllerScript : MonoBehaviour
             int guessedMoney = parseAnswer(dictationController.resultText);
             guessBox.SetText($"You guessed: ${guessedMoney}");
             dictationController.resultText = "";
+            // Spawn coins
+            guessCoinScript.burgersToSpawn = guessedMoney;
 
             textBox.SetText("Contacting server...");
 
@@ -124,9 +126,8 @@ public class GameControllerScript : MonoBehaviour
             textBox.SetText(backend.geePeeTee);
 
             // Spawn coins
-            guessCoinScript.burgersToSpawn = guessedMoney;
             actualCoinScript.burgersToSpawn = backend.actualValue;
-            guessBox.SetText($"Actual amount: ${backend.actualValue}");
+            actualBox.SetText($"Actual amount: ${backend.actualValue}");
 
             // Spawn burgers (or coffee) (around $5 per burger and $2 per coffee)
             if (currentStringSet[2].Equals("Grocery"))
